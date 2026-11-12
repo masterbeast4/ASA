@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رابطة طلاب كلية الآداب | جامعة وادي النيل</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              800: '#162844',
+              900: '#0F1C30',
+              950: '#091220',
+            },
+            gold: {
+              400: '#E2BE6F',
+              500: '#D4AF37',
+              600: '#B59224',
+            }
+          },
+          fontFamily: {
+            sans: ['Cairo', 'sans-serif'],
+            serif: ['Amiri', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Cairo', sans-serif; }
+    .font-amiri { font-family: 'Amiri', serif; }
+    .hero-pattern {
+      background-color: #0F1C30;
+      background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #0F1C30 0.75px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-navy-950 dark:text-slate-100 transition-colors duration-300">
+
+  <!-- الشريط العلوي -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-navy-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-navy-900 dark:bg-gold-500 text-gold-500 dark:text-navy-900 flex items-center justify-center font-bold text-xl shadow">
+          آ
+        </div>
+        <div>
+          <h1 class="font-bold text-base sm:text-lg text-navy-900 dark:text-white leading-tight">رابطة طلاب كلية الآداب</h1>
+          <p class="text-xs text-slate-500 dark:text-slate-400">جامعة وادي النيل • المكتب التنفيذي</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold">
+        <a href="#about" class="hover:text-gold-600 dark:hover:text-gold-400 transition">عن الرابطة</a>
+        <a href="#committees" class="hover:text-gold-600 dark:hover:text-gold-400 transition">اللجان والأقسام</a>
+        <a href="#announcements" class="hover:text-gold-600 dark:hover:text-gold-400 transition">الإعلانات</a>
+        <a href="#voice" class="hover:text-gold-600 dark:hover:text-gold-400 transition">صوت الطالب</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="themeToggle" aria-label="تبديل الوضع الليلي" class="p-2.5 rounded-lg bg-slate-100 dark:bg-navy-800 text-slate-700 dark:text-gold-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button onclick="openAdminModal()" class="px-3.5 py-2 rounded-lg bg-navy-900 dark:bg-gold-500 text-white dark:text-navy-900 text-xs sm:text-sm font-bold hover:opacity-90 transition shadow-sm flex items-center gap-1.5">
+          <span>⚙️</span>
+          <span>لوحة الإدارة</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- القسم الترحيبي (Hero) -->
+  <section class="relative overflow-hidden bg-navy-900 text-white py-20 sm:py-28">
+    <div class="absolute inset-0 hero-pattern opacity-10"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-gold-500/15 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-semibold mb-6">
+        المكتب التنفيذي لرابطة طلاب كلية الآداب • جامعة وادي النيل
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-6">
+        صوت الطالب.. وركيزة <span class="text-gold-400 font-amiri text-4xl sm:text-6xl">الإبداع والمعرفة</span>
+      </h2>
+      <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg leading-relaxed mb-10">
+        نعمل معاً لتمثيل طلاب كلية الآداب، ورعاية المبادرات الأكاديمية والثقافية والإعلامية، وبناء بيئة جامعية ملهمة تليق بتاريخ الكلية وعطائها.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#committees" class="px-7 py-3.5 rounded-xl bg-gold-500 text-navy-900 font-bold hover:bg-gold-400 transition shadow-lg">
+          استكشف اللجان التنفيذية
+        </a>
+        <a href="#voice" class="px-7 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white font-bold hover:bg-white/20 transition">
+          أرسل مقترحك للرابطة
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- نبذة وإحصائيات -->
+  <section id="about" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-3xl mb-3">🎓</div>
+        <h3 class="font-bold text-lg text-navy-900 dark:text-white mb-2">التمثيل الطلابي</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">متابعة القضايا الأكاديمية والخدمية لطلاب كافة الأقسام والتنسيق المباشر مع عمادة الكلية.</p>
+      </div>
+      <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-3xl mb-3">🏛️</div>
+        <h3 class="font-bold text-lg text-navy-900 dark:text-white mb-2">الحراك الثقافي والإعلامي</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">تنظيم المنتديات الأدبية، الدورات التدريبية، والمنصات الإعلامية التي تبرز مواهب الطلاب.</p>
+      </div>
+      <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-3xl mb-3">🤝</div>
+        <h3 class="font-bold text-lg text-navy-900 dark:text-white mb-2">التكافل والخدمات</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">دعم البيئة الجامعية وتوفير المبادرات الطلابية التي تعزز روح التعاون والانتماء.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- اللجان التنفيذية -->
+  <section id="committees" class="py-16 bg-slate-100/70 dark:bg-navy-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 dark:text-white mb-3">لجان المكتب التنفيذي</h2>
+        <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto text-sm sm:text-base">تعمل لجان الرابطة بتناغم لتغطية كافة الجوانب الأكاديمية والثقافية والخدمية لطلاب الكلية.</p>
+      </div>
+
+      <div id="committeesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- يتم تعبئة اللجان تلقائياً عبر JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- لوحة الإعلانات والأخبار -->
+  <section id="announcements" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 dark:text-white mb-2">لوحة الإعلانات والتنويهات</h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm">آخر الأخبار والقرارات الصادرة عن المكتب التنفيذي للرابطة.</p>
+      </div>
+    </div>
+
+    <div id="announcementsList" class="space-y-4">
+      <!-- يتم تعبئة الإعلانات تلقائياً عبر JavaScript -->
+    </div>
+  </section>
+
+  <!-- بوابة صوت الطالب -->
+  <section id="voice" class="py-16 bg-navy-900 text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">بوابة صوت الطالب</h2>
+        <p class="text-slate-300 text-sm sm:text-base">لديك مقترح، مبادرة، أو مشكلة أكاديمية؟ أرسلها مباشرة إلى المكتب التنفيذي.</p>
+      </div>
+
+      <form id="studentForm" class="bg-navy-800/80 border border-slate-700 p-6 sm:p-8 rounded-2xl space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">الاسم الكامل (اختياري)</label>
+            <input type="text" id="msgName" placeholder="اسم الطالب" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-gold-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">القسم الدراسي</label>
+            <input type="text" id="msgDept" required placeholder="مثال: الإعلام، اللغة العربية، التاريخ..." class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-gold-500">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-2">نوع الرسالة</label>
+          <select id="msgType" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-gold-500">
+            <option value="مقترح تطويري">مقترح تطويري</option>
+            <option value="شكوى أكاديمية أو خدمية">شكوى أكاديمية أو خدمية</option>
+            <option value="مبادرة طلابية">مبادرة طلابية</option>
+            <option value="استفسار عام">استفسار عام</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-2">نص الرسالة</label>
+          <textarea id="msgBody" rows="4" required placeholder="اكتب تفاصيل رسالتك هنا بكل وضوح..." class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-gold-500"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-gold-500 text-navy-900 font-bold hover:bg-gold-400 transition shadow-lg">
+          إرسال الرسالة للمكتب التنفيذي
+        </button>
+        <p id="formFeedback" class="hidden text-center text-sm text-emerald-400 font-semibold pt-2">
+          ✓ تم استلام رسالتك بنجاح وحفظها لدى المكتب التنفيذي.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer class="bg-navy-950 text-slate-400 py-10 border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> رابطة طلاب كلية الآداب - جامعة وادي النيل. جميع الحقوق محفوظة.</p>
+      <button onclick="openAdminModal()" class="text-gold-400 hover:underline text-xs">دخول المشرفين</button>
+    </div>
+  </footer>
+
+  <!-- نافذة لوحة التحكم (Admin Modal) -->
+  <div id="adminModal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white dark:bg-navy-900 w-full max-w-4xl rounded-2xl border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden my-8">
+      
+      <!-- رأس النافذة -->
+      <div class="bg-navy-900 text-white px-6 py-4 flex items-center justify-between border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <span class="text-gold-400 text-xl">⚙️</span>
+          <h3 class="font-bold text-lg">لوحة إدارة موقع رابطة كلية الآداب</h3>
+        </div>
+        <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white text-2xl leading-none">&times;</button>
+      </div>
+
+      <!-- شاشة تسجيل الدخول -->
+      <div id="adminLoginScreen" class="p-8 max-w-md mx-auto text-center">
+        <div class="w-14 h-14 rounded-2xl bg-gold-500/15 text-gold-500 flex items-center justify-center text-2xl mx-auto mb-4">🔒</div>
+        <h4 class="font-bold text-lg text-navy-900 dark:text-white mb-2">تسجيل دخول المشرفين</h4>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">أدخل كلمة مرور الإدارة للتحكم في اللجان والإعلانات (الافتراضية: admin2026)</p>
+        <input type="password" id="adminPassInput" placeholder="كلمة المرور" class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-navy-800 border border-slate-300 dark:border-slate-700 text-center mb-4 focus:outline-none focus:border-gold-500">
+        <button onclick="checkAdminLogin()" class="w-full py-3 rounded-xl bg-navy-900 dark:bg-gold-500 text-white dark:text-navy-900 font-bold hover:opacity-90 transition">
+          دخول للوحة التحكم
+        </button>
+        <p id="loginError" class="hidden text-red-500 text-xs font-semibold mt-3">كلمة المرور غير صحيحة!</p>
+      </div>
+
+      <!-- محتوى لوحة التحكم بعد الدخول -->
+      <div id="adminDashboard" class="hidden">
+        <!-- التبويبات -->
+        <div class="flex flex-wrap border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-navy-950 px-4">
+          <button onclick="switchTab('tabCommittees')" id="btn-tabCommittees" class="tab-btn px-4 py-3 text-sm font-bold border-b-2 border-gold-500 text-navy-900 dark:text-gold-400">إدارة اللجان</button>
+          <button onclick="switchTab('tabAnnouncements')" id="btn-tabAnnouncements" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-500 hover:text-navy-900 dark:hover:text-white">إدارة الإعلانات</button>
+          <button onclick="switchTab('tabMessages')" id="btn-tabMessages" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-500 hover:text-navy-900 dark:hover:text-white">رسائل الطلاب (<span id="msgCount">0</span>)</button>
+          <button onclick="switchTab('tabSettings')" id="btn-tabSettings" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-500 hover:text-navy-900 dark:hover:text-white">الإعدادات</button>
+        </div>
+
+        <div class="p-6 max-h-[70vh] overflow-y-auto">
+          
+          <!-- 1. تبويب اللجان -->
+          <div id="tabCommittees" class="tab-content space-y-6">
+            <form id="addCommitteeForm" class="bg-slate-50 dark:bg-navy-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-3">
+              <h5 class="font-bold text-sm text-navy-900 dark:text-gold-400">إضافة لجنة جديدة</h5>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <input type="text" id="newCommName" required placeholder="اسم اللجنة (مثال: اللجنة الثقافية)" class="px-3 py-2 rounded-lg bg-white dark:bg-navy-900 border border-slate-300 dark:border-slate-700 text-sm">
+                <input type="text" id="newCommHead" required placeholder="اسم أمين / رئيس اللجنة" class="px-3 py-2 rounded-lg bg-white dark:bg-navy-900 border border-slate-300 dark:border-slate-700 text-sm">
+                <input type="text" id="newCommIcon" placeholder="أيقونة (مثال: 📚)" value="🏛️" class="px-3 py-2 rounded-lg bg-white dark:bg-navy-900 border border-slate-300 dark:border-slate-700 text-sm">
+              </div>
+              <input type="text" id="newCommDesc" required placeholder="وصف مختصر لمهام اللجنة..." class="w-full px-3 py-2 rounded-lg bg-white dark:bg-navy-900 border border-slate-300 dark:border-slate-700 text-sm">
+              <button type="submit" class="px-4 py-2 rounded-lg bg-navy-900 dark:bg-gold-500 text-white dark:text-navy-900 text-xs font-bold">+ إضافة اللجنة</button>
+            </form>
+
+            <div id="adminCommitteesList" class="space-y-3"></div>
+          </div>
+
+          <!-- 2. تبويب الإعلانات -->
+          <div id="tabAnnouncements" class="tab-content hidden space-y-6">
+            <form id="addAnnouncementForm" class="bg-slate-50 dark:bg-navy-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-3">
+              <h5 class="font-bold text-sm text-navy-900 dark:text-gold-400">نشر إعلان جديد</h5>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input type="text" id="newAnnTitle" required placeholder="عنوان الإعلان" class="px-3 py-2 rounded-lg bg-white dark:bg-navy-900 border border-slate-300 dark:border-slate-700 text-sm">
+                <label class="flex items-center gap-2 text-sm px-3 py-2">
+                  <input type="checkbox" id="newAnnUrgent" class="rounded text-gold-500">
+                  <span>تمييز كإعلان عاجل</span>
+                </label>
+              </div>
+              <textarea id="newAnnBody" rows="2" required placeholder="تفاصيل الإعلان..." class="w-full px-3 py-2 rounded-lg bg-white dark:bg-navy-900 border border-slate-300 dark:border-slate-700 text-sm"></textarea>
+              <button type="submit" class="px-4 py-2 rounded-lg bg-navy-900 dark:bg-gold-500 text-white dark:text-navy-900 text-xs font-bold">+ نشر الإعلان</button>
+            </form>
+
+            <div id="adminAnnouncementsList" class="space-y-3"></div>
+          </div>
+
+          <!-- 3. تبويب رسائل الطلاب -->
+          <div id="tabMessages" class="tab-content hidden space-y-3">
+            <div id="adminMessagesList" class="space-y-3"></div>
+          </div>
+
+          <!-- 4. تبويب الإعدادات -->
+          <div id="tabSettings" class="tab-content hidden space-y-4 max-w-md">
+            <h5 class="font-bold text-sm">تغيير كلمة مرور لوحة الإدارة</h5>
+            <input type="password" id="newAdminPass" placeholder="كلمة المرور الجديدة" class="w-full px-3 py-2 rounded-lg bg-slate-100 dark:bg-navy-800 border border-slate-300 dark:border-slate-700 text-sm">
+            <button onclick="changePassword()" class="px-4 py-2 rounded-lg bg-gold-500 text-navy-900 text-xs font-bold">حفظ كلمة المرور</button>
+            <hr class="border-slate-200 dark:border-slate-800 my-4">
+            <button onclick="resetDefaultData()" class="px-4 py-2 rounded-lg bg-red-600 text-white text-xs font-bold">استعادة البيانات الافتراضية</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // البيانات الافتراضية
+    const defaultCommittees = [
+      { id: 1, name: "الأمانة الأكاديمية", head: "أمين الشؤون الأكاديمية", icon: "📚", desc: "متابعة الجداول الدراسية، الامتحانات، وتوفير المراجع والملخصات لكافة أقسام الكلية." },
+      { id: 2, name: "الأمانة الثقافية", head: "أمين الشؤون الثقافية", icon: "🎭", desc: "تنظيم الندوات الأدبية، المسابقات الشعرية، والمنتديات الفكرية داخل الكلية." },
+      { id: 3, name: "أمانة الإعلام والعلاقات العامة", head: "أمين الإعلام", icon: "🎙️", desc: "تغطية أنشطة الرابطة، إدارة المنصات الرقمية، وبناء جسور التواصل مع الجهات المختلفة." },
+      { id: 4, name: "الأمانة الاجتماعية والتكافل", head: "أمين الشؤون الاجتماعية", icon: "🤝", desc: "رعاية شؤون الطلاب، تنظيم مبادرات الدعم الطلابي، وتعزيز الروابط الأخوية." },
+      { id: 5, name: "الأمانة الرياضية", head: "أمين الشؤون الرياضية", icon: "⚽", desc: "الإشراف على الفرق الرياضية للكلية وتنظيم الدوريات والفعاليات البدنية." },
+      { id: 6, name: "الأمانة المالية", head: "أمين المال", icon: "💼", desc: "إدارة ميزانية الرابطة وتوفير الموارد اللازمة لدعم برامج المكتب التنفيذي." }
+    ];
+
+    const defaultAnnouncements = [
+      { id: 1, title: "انطلاق التسجيل في اللجان التنفيذية المساعدة", body: "يدعو المكتب التنفيذي لرابطة طلاب كلية الآداب جميع الطلاب الراغبين في الانضمام لعضوية اللجان المساعدة لتسجيل أسمائهم بمكتب الرابطة.", date: "نوفمبر 2026", urgent: true },
+      { id: 2, title: "تنويه بخصوص الجداول الدراسية للفصل الحالي", body: "تؤكد الأمانة الأكاديمية متابعتها المستمرة مع إدارة الكلية لتذليل كافة العقبات المتعلقة بتعارض المحاضرات.", date: "نوفمبر 2026", urgent: false }
+    ];
+
+    // تحميل البيانات من LocalStorage
+    let committees = JSON.parse(localStorage.getItem('asa_committees')) || defaultCommittees;
+    let announcements = JSON.parse(localStorage.getItem('asa_announcements')) || defaultAnnouncements;
+    let messages = JSON.parse(localStorage.getItem('asa_messages')) || [];
+    let adminPass = localStorage.getItem('asa_admin_pass') || 'admin2026';
+
+    function saveData() {
+      localStorage.setItem('asa_committees', JSON.stringify(committees));
+      localStorage.setItem('asa_announcements', JSON.stringify(announcements));
+      localStorage.setItem('asa_messages', JSON.stringify(messages));
+      renderAll();
+    }
+
+    // عرض اللجان في الموقع ولوحة التحكم
+    function renderCommittees() {
+      const grid = document.getElementById('committeesGrid');
+      const adminList = document.getElementById('adminCommitteesList');
+      
+      grid.innerHTML = committees.map(c => `
+        <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-gold-500 transition group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-12 h-12 rounded-xl bg-navy-900/5 dark:bg-gold-500/10 flex items-center justify-center text-2xl">${c.icon}</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-navy-800 text-slate-600 dark:text-gold-400">${c.head}</span>
+          </div>
+          <h3 class="font-bold text-lg text-navy-900 dark:text-white mb-2 group-hover:text-gold-600 dark:group-hover:text-gold-400 transition">${c.name}</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">${c.desc}</p>
+        </div>
+      `).join('');
+
+      adminList.innerHTML = committees.map(c => `
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-white dark:bg-navy-800 border border-slate-200 dark:border-slate-700">
+          <div>
+            <div class="font-bold text-sm">${c.icon} ${c.name} <span class="text-xs text-gold-600 dark:text-gold-400">(${c.head})</span></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">${c.desc}</p>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button onclick="editCommittee(${c.id})" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-navy-700 text-xs font-semibold hover:bg-gold-500 hover:text-navy-900 transition">تعديل</button>
+            <button onclick="deleteCommittee(${c.id})" class="px-3 py-1.5 rounded-lg bg-red-500/10 text-red-600 text-xs font-semibold hover:bg-red-600 hover:text-white transition">حذف</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // عرض الإعلانات
+    function renderAnnouncements() {
+      const list = document.getElementById('announcementsList');
+      const adminList = document.getElementById('adminAnnouncementsList');
+
+      list.innerHTML = announcements.map(a => `
+        <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl border ${a.urgent ? 'border-gold-500/60' : 'border-slate-200 dark:border-slate-800'} shadow-sm">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2">
+              ${a.urgent ? '<span class="px-2.5 py-0.5 rounded-full bg-red-500/15 text-red-600 dark:text-red-400 text-xs font-bold">عاجل</span>' : ''}
+              <h3 class="font-bold text-lg text-navy-900 dark:text-white">${a.title}</h3>
+            </div>
+            <span class="text-xs text-slate-400">${a.date}</span>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${a.body}</p>
+        </div>
+      `).join('');
+
+      adminList.innerHTML = announcements.map(a => `
+        <div class="flex items-center justify-between gap-3 p-3.5 rounded-xl bg-white dark:bg-navy-800 border border-slate-200 dark:border-slate-700">
+          <div>
+            <div class="font-bold text-sm">${a.urgent ? '🔴 ' : ''}${a.title}</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">${a.body}</p>
+          </div>
+          <button onclick="deleteAnnouncement(${a.id})" class="px-3 py-1.5 rounded-lg bg-red-500/10 text-red-600 text-xs font-semibold hover:bg-red-600 hover:text-white transition shrink-0">حذف</button>
+        </div>
+      `).join('');
+    }
+
+    // عرض رسائل الطلاب
+    function renderMessages() {
+      document.getElementById('msgCount').textContent = messages.length;
+      const list = document.getElementById('adminMessagesList');
+      if (messages.length === 0) {
+        list.innerHTML = '<p class="text-center text-sm text-slate-500 py-8">لا توجد رسائل واردة من الطلاب حتى الآن.</p>';
+        return;
+      }
+      list.innerHTML = messages.map(m => `
+        <div class="p-4 rounded-xl bg-white dark:bg-navy-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-gold-600 dark:text-gold-400">${m.name || 'طالب بالكلية'} • قسم ${m.dept}</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-navy-700">${m.type}</span>
+          </div>
+          <p class="text-sm text-slate-700 dark:text-slate-200">${m.body}</p>
+          <div class="flex justify-between items-center pt-1">
+            <span class="text-[11px] text-slate-400">${m.date}</span>
+            <button onclick="deleteMessage(${m.id})" class="text-xs text-red-500 hover:underline">حذف الرسالة</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderAll() {
+      renderCommittees();
+      renderAnnouncements();
+      renderMessages();
+    }
+
+    // عمليات الإدارة
+    document.getElementById('addCommitteeForm').addEventListener('submit', e => {
+      e.preventDefault();
+      committees.push({
+        id: Date.now(),
+        name: document.getElementById('newCommName').value,
+        head: document.getElementById('newCommHead').value,
+        icon: document.getElementById('newCommIcon').value || '🏛️',
+        desc: document.getElementById('newCommDesc').value
+      });
+      e.target.reset();
+      saveData();
+    });
+
+    function editCommittee(id) {
+      const comm = committees.find(c => c.id === id);
+      if (!comm) return;
+      const newName = prompt('تعديل اسم اللجنة:', comm.name);
+      if (newName === null) return;
+      const newHead = prompt('تعديل اسم رئيس/أمين اللجنة:', comm.head);
+      const newDesc = prompt('تعديل وصف اللجنة:', comm.desc);
+      comm.name = newName || comm.name;
+      comm.head = newHead || comm.head;
+      comm.desc = newDesc || comm.desc;
+      saveData();
+    }
+
+    function deleteCommittee(id) {
+      if (confirm('هل أنت متأكد من حذف هذه اللجنة؟')) {
+        committees = committees.filter(c => c.id !== id);
+        saveData();
+      }
+    }
+
+    document.getElementById('addAnnouncementForm').addEventListener('submit', e => {
+      e.preventDefault();
+      announcements.unshift({
+        id: Date.now(),
+        title: document.getElementById('newAnnTitle').value,
+        body: document.getElementById('newAnnBody').value,
+        urgent: document.getElementById('newAnnUrgent').checked,
+        date: new Date().toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' })
+      });
+      e.target.reset();
+      saveData();
+    });
+
+    function deleteAnnouncement(id) {
+      announcements = announcements.filter(a => a.id !== id);
+      saveData();
+    }
+
+    // إرسال رسالة طالب
+    document.getElementById('studentForm').addEventListener('submit', e => {
+      e.preventDefault();
+      messages.unshift({
+        id: Date.now(),
+        name: document.getElementById('msgName').value,
+        dept: document.getElementById('msgDept').value,
+        type: document.getElementById('msgType').value,
+        body: document.getElementById('msgBody').value,
+        date: new Date().toLocaleDateString('ar-EG')
+      });
+      saveData();
+      e.target.reset();
+      const fb = document.getElementById('formFeedback');
+      fb.classList.remove('hidden');
+      setTimeout(() => fb.classList.add('hidden'), 4000);
+    });
+
+    function deleteMessage(id) {
+      messages = messages.filter(m => m.id !== id);
+      saveData();
+    }
+
+    // التحكم في نافذة الإدارة والتبويبات
+    function openAdminModal() {
+      document.getElementById('adminModal').classList.remove('hidden');
+    }
+    function closeAdminModal() {
+      document.getElementById('adminModal').classList.add('hidden');
+    }
+    function checkAdminLogin() {
+      const val = document.getElementById('adminPassInput').value;
+      if (val === adminPass) {
+        document.getElementById('adminLoginScreen').classList.add('hidden');
+        document.getElementById('adminDashboard').classList.remove('hidden');
+        document.getElementById('loginError').classList.add('hidden');
+      } else {
+        document.getElementById('loginError').classList.remove('hidden');
+      }
+    }
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-b-2', 'border-gold-500', 'text-navy-900', 'dark:text-gold-400', 'font-bold');
+        btn.classList.add('text-slate-500');
+      });
+      const activeBtn = document.getElementById('btn-' + tabId);
+      activeBtn.classList.add('border-b-2', 'border-gold-500', 'text-navy-900', 'dark:text-gold-400', 'font-bold');
+      activeBtn.classList.remove('text-slate-500');
+    }
+    function changePassword() {
+      const np = document.getElementById('newAdminPass').value.trim();
+      if (np.length >= 4) {
+        adminPass = np;
+        localStorage.setItem('asa_admin_pass', adminPass);
+        alert('تم تحديث كلمة المرور بنجاح.');
+        document.getElementById('newAdminPass').value = '';
+      } else {
+        alert('يرجى إدخال كلمة مرور من 4 أحرف على الأقل.');
+      }
+    }
+    function resetDefaultData() {
+      if (confirm('سيتم مسح التعديلات والعودة للبيانات الافتراضية، هل أنت متأكد؟')) {
+        localStorage.removeItem('asa_committees');
+        localStorage.removeItem('asa_announcements');
+        committees = [...defaultCommittees];
+        announcements = [...defaultAnnouncements];
+        renderAll();
+      }
+    }
+
+    // الوضع الليلي
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      themeIcon.textContent = isDark ? '☀️' : '🌙';
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderAll();
+  </script>
+</body>
+</html>
